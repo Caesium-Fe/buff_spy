@@ -1,0 +1,17 @@
+:authority: buff.163.com
+:method: GET
+:path: /api/market/goods/sell_order?game=csgo&goods_id=43092&page_num=1&sort_by=price.asc&mode=&allow_tradable_cooldown=1&tag_ids=451182&_=1661828161921
+:scheme: https
+accept: application/json, text/javascript, */*; q=0.01
+accept-encoding: gzip, deflate, br
+accept-language: zh-TW,zh;q=0.9
+cookie: _ntes_nnid=04cb0b50e4678046f79e1ca497d8e1cb,1660782599199; _ntes_nuid=04cb0b50e4678046f79e1ca497d8e1cb; Device-Id=yeMvQVSKYHScUjG0s41u; Locale-Supported=zh-Hans; NTES_YD_SESS=ANcLN2essRtPOo8ZrnIjGGCGGAlWXOSR_9speArJqkMzBlf2BpU6Vjfe_1l52ATjHgn3fZB0EhXoInBId4mywGPLoTTqB5iM9ZINnV.cVg1GFxmSRocg.l697r7uIH7K78f2MDyagYj2f_c17E6ySX1f0atFs0N4m5WPGrUbeFFstsp7JkEUjjdAQhqsHsTG2zq7aHrRoWnrzHq8X5..B4MnjVK0r9qKuUVIknzXDKbaC; S_INFO=1661840462|0|0&60##|15084952927; P_INFO=15084952927|1661840462|1|netease_buff|00&99|null&null&null#gud&441900#10#0|&0||15084952927; remember_me=U1099278204|EUOOlpko5RJhj95WM0pZPOV2WpT9DrtA; session=1-SkKQqVuuz6PlD6RJtMoimZyQ1Br25zeBrRm9NPZsGOCv2034972708; game=csgo; csrf_token=IjVmNzFiMDFkNThmYmUxYjA5NWIwMTFlMTUxZjBkZDU4MWM2ZGZlOTki.Fe8_Ww.987AO5IwQMYC7Q5nuMaj4cJFOl0
+referer: https://buff.163.com/goods/43092
+sec-ch-ua: ".Not/A)Brand";v="99", "Google Chrome";v="103", "Chromium";v="103"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-origin
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.134 Safari/537.36
+x-requested-with: XMLHttpRequest
