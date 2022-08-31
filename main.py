@@ -76,7 +76,8 @@ class requestQuery:
 
         pass
 
-    def request_
+    def request_for_itemF(self):
+        pass
 
 
 # 秒杀逻辑
