@@ -83,9 +83,10 @@ class RequestQuery:
     def request_for_item_f(self):
         try:
             # 完成Get请求功能
-            response_obj = requests.request(method="GET", url=self.url, headers=self.head, timeout=self.time_out)
+            response_obj = requests.get(url=self.url, headers=self.head, timeout=self.time_out)
+            # response_obj = requests.request(method="GET", url=self.url, headers=self.head, timeout=self.time_out)
             if 200 <= response_obj.status_code < 300:
-                return response_obj.json()
+                return response_obj
             else:
                 raise Exception("There is something wrong about response of " + self.url)
         except Exception as e:
@@ -111,7 +112,10 @@ if __name__ == '__main__':
     url_t, head_t, latest_price_t, expect_price_t = json_obj.parse_weapon_menu(json_data)
     print(random_seconds)
     # 获得数据接口返回值json
-    item_json = RequestQuery(url_t, head_t, latest_price_t, expect_price_t)
+    request_obj = RequestQuery(url_t, head_t, latest_price_t, expect_price_t)
+    response = request_obj.request_for_item_f()
+    # json转dict 看一下response.content是否为byte类型
+    result = json.loads(response.content.decode('utf-8'))
     # 将json送去解析
     item_json_obj = WeaponMenu()
     # 拿到第一个item的价格和最低还价
