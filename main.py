@@ -42,8 +42,10 @@ class WeaponMenu:
         return url, head, latest_price, expect_price
 
     # 解析api接口返回的json数据获取第一条数据的bargain_price, actually_price
-    def parse_items_json(self, item_json_temp):
-        api_dict = json.load(item_json_temp)
+    def parse_items_json(self, response_temp):
+        # json转dict 看一下response.content是否为byte类型
+        api_dict = json.loads(response_temp.content.decode('utf-8'))
+        # api_dict = json.load(item_json_temp)
         data = api_dict[self.data]
         items = data[self.items]
         first_item_dict = items[0]
@@ -94,13 +96,24 @@ class RequestQuery:
         # pass
 
 
-# 秒杀逻辑
+# 秒杀逻辑 -> 收藏逻辑
 class SecondKill:
 
-    def __init__(self):
+    def __init__(self, bargain_price, actually_price, latest_price, expect_price):
+        self.bargain_price = bargain_price
+        self.actually_price = actually_price
+        self.latest_price = latest_price
+        self.expect_price = expect_price
+
+    def compare_price(self):
         # 比价功能
+
         pass
-        # 购买功能
+
+    def add_to_collection(self):
+        # 加入收藏
+
+        pass
 
 
 if __name__ == '__main__':
@@ -114,9 +127,7 @@ if __name__ == '__main__':
     # 获得数据接口返回值json
     request_obj = RequestQuery(url_t, head_t, latest_price_t, expect_price_t)
     response = request_obj.request_for_item_f()
-    # json转dict 看一下response.content是否为byte类型
-    result = json.loads(response.content.decode('utf-8'))
     # 将json送去解析
     item_json_obj = WeaponMenu()
     # 拿到第一个item的价格和最低还价
-    bargain_price_t, actually_price_t = item_json_obj.parse_items_json(item_json)
+    bargain_price_t, actually_price_t = item_json_obj.parse_items_json(response)
